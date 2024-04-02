@@ -26,7 +26,15 @@ public class Reto1 {
         if (directorios.exists()) {
             System.out.println("Esto EXISTE");
             if (directorios.isDirectory()) {
-                System.out.println("Es un directorio");
+                System.out.println("Es un directorio y contiene:\n");
+                File[] ficheros = directorios.listFiles();
+                for (File f : ficheros) {
+                    System.out.println(f);
+                }
+                if (directorios.isFile()){
+                    System.out.println("El elemento tiene una longitud de: " + elemento.length());
+                }
+
             } else {
                 System.out.println("No es un directorio");
             }
@@ -38,6 +46,5 @@ public class Reto1 {
 
 
 
-
-}
+    }
 }
