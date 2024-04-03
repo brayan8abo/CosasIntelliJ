@@ -39,7 +39,7 @@ public class reto1_3 {
 				System.err.println("No existe dentro del directorio");
 			}
 			if (archivos.isDirectory()) {
-				try {
+//				try {
 					assert subDirectorios != null;
 					for (File subDir : subDirectorios) {
 						if (subDir.isDirectory()) {
@@ -47,15 +47,15 @@ public class reto1_3 {
 						}
 						reto1_3.listarArchivosRecursivo(archivos);
 
-						if (archivos.isDirectory()) {
-							if (archivos.isFile()) {
-								System.out.println("La suma de todos los ficheros es: " + archivos.length() + archivos.length());
-							}
-						}
+//						if (archivos.isDirectory()) {
+//							if (archivos.isFile()) {
+//								System.out.println("La suma de todos los ficheros es: " + archivos.length() + archivos.length());
+//							}
+//						}
 					}
-				} catch (NullPointerException e) {
-					throw new NullPointerException();
-				}
+//				} catch (NullPointerException e) {
+//					throw new NullPointerException();
+//				}
 			}
 		}
 	}
