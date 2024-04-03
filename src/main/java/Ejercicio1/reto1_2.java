@@ -24,11 +24,12 @@ public class reto1_2 {
 
 		if (files.exists()) {
 			System.out.println("Existe");
-			if (files.isFile()){
+			if (files.isFile()) {
 				System.out.println("El fichero SÍ existe");
 			} else {
 				System.err.println("NO EXISTE");
 			}
+
 		}
 	}
 }
