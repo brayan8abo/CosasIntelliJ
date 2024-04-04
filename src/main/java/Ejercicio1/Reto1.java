@@ -41,7 +41,6 @@ public class Reto1 {
 				File[] ficheros = directorios.listFiles();
 				for (File fichero : ficheros) {
 					System.out.println(fichero.getName());
-
 				}
 
 			} else {
