@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class reto1_3 {
 //    Escribir un programa Java que le pida al usuario el nombre de un directorio y de un fichero. CHECK
 //    Compruebe si el fichero existe dentro del directorio. Si no existe devuelve un mensaje de error y sale. CHECK
+//    Listar los subdirectorios del directorio CHECK
+//    Listar los ficheros del directorio CHECK
 
-//    Listar los subdirectorios del directorio
-//    Listar los ficheros del directorio
 //    Calcular el tamaño total de los ficheros de un directorio
 //    Listar los ficheros de un directorio que empiecen por una letra en particular (utilizar el método charAt())
 
@@ -41,13 +41,39 @@ public class reto1_3 {
                     if (subDir.isDirectory()) {
                         System.out.println("Los subdirectorios de este directorio son: " + subDir.getName());
                     }
+                    listarArchivos(subDir);
+                }
+            }
+            File [] longitudes = archivos.listFiles();
+            int suma =0;
 
 
+                for (File longitud: longitudes){
+                    if (longitud.isFile()){
+                        suma += longitud.length();
+                    }
+
+                }
+                System.out.println("La suma de todos los ficheros es: " + suma);
+
+
+
+        }
+    }
+
+    public static void listarArchivos(File directorio) {
+        if (directorio.isFile()) {
+            System.out.println("Archivos en el directorio " + directorio.getAbsolutePath() + " ");
+            File[] archivos = directorio.listFiles();
+            if (archivos != null) {
+                for (File archivo : archivos) {
+                    if (archivo.isDirectory()) {
+                        listarArchivos(archivo); // Llamada recursiva si es un directorio
+                    } else {
+                        System.out.println(archivo.getName());
+                    }
                 }
             }
         }
-
-
     }
-
 }
