@@ -12,68 +12,78 @@ public class reto1_3 {
 //    Calcular el tamaño total de los ficheros de un directorio
 //    Listar los ficheros de un directorio que empiecen por una letra en particular (utilizar el método charAt())
 
-    public static void main(String[] args) {
-        Scanner leer = new Scanner(System.in);
+	public static void main(String[] args) {
+		Scanner leer = new Scanner(System.in);
 
-        System.out.println("Ingresa el nombre de un directorio");
-        String directorio = leer.nextLine();
-        System.out.println("Ingresa el nombre de un fichero");
-        String fichero = leer.nextLine();
+		System.out.println("Ingresa el nombre de un directorio");
+		String directorio = leer.nextLine();
+		System.out.println("Ingresa el nombre de un fichero");
+		String fichero = leer.nextLine();
 
-        File archivos = new File(directorio, fichero);
-
-
-        File[] subDirectorios = archivos.listFiles();
-
-        if (archivos.exists()) {
-            if (archivos.isDirectory()) {
-                System.out.println("Es un directorio");
-            } else {
-                System.err.println("No es un directorio");
-            }
-            if (archivos.isFile()) {
-                System.out.println("Si existen dentro del directorio");
-            } else {
-                System.err.println("No existe dentro del directorio");
-            }
-            if (archivos.isDirectory()) {
-                for (File subDir : subDirectorios) {
-                    if (subDir.isDirectory()) {
-                        System.out.println("Los subdirectorios de este directorio son: " + subDir.getName());
-                    }
-                    listarArchivos(subDir);
-                }
-            }
-            File [] longitudes = archivos.listFiles();
-            int suma =0;
+		File archivos = new File(directorio, fichero);
 
 
-                for (File longitud: longitudes){
-                    if (longitud.isFile()){
-                        suma += longitud.length();
-                    }
+		File[] subDirectorios = archivos.listFiles();
+		File[] ficheros = archivos.listFiles();
 
-                }
-                System.out.println("La suma de todos los ficheros es: " + suma);
+		if (archivos.exists()) {
+			if (archivos.isDirectory()) {
+				System.out.println("Es un directorio");
+			} else {
+				System.err.println("No es un directorio");
+			}
+			if (archivos.isFile()) {
+				System.out.println("Si existen dentro del directorio");
+			} else {
+				System.err.println("No existe dentro del directorio");
+			}
+			if (archivos.isDirectory()) {
+				for (File subDir : subDirectorios) {
+					if (subDir.isDirectory()) {
+						System.out.println("Los subdirectorios de este directorio son: " + subDir.getName());
+					}
+//                    listarArchivos(subDir);
+				}
+			}
+			if (archivos.isFile()) {
+				for (File file : ficheros) {
+					if (file.isFile()) {
+						System.out.println("Los ficheros del directorio son: " + file.getName());
+					}
+				}
 
+			}
+		}
+//            File [] longitudes = archivos.listFiles();
+//            int suma =0;
+//
+//
+//                for (File longitud: longitudes){
+//                    if (longitud.isFile()){
+//                        suma += longitud.length();
+//                    }
+//
+//                }
+//                System.out.println("La suma de todos los ficheros es: " + suma);
+//
+//
 
-
-        }
-    }
-
-    public static void listarArchivos(File directorio) {
-        if (directorio.isFile()) {
-            System.out.println("Archivos en el directorio " + directorio.getAbsolutePath() + " ");
-            File[] archivos = directorio.listFiles();
-            if (archivos != null) {
-                for (File archivo : archivos) {
-                    if (archivo.isDirectory()) {
-                        listarArchivos(archivo); // Llamada recursiva si es un directorio
-                    } else {
-                        System.out.println(archivo.getName());
-                    }
-                }
-            }
-        }
-    }
+	}
 }
+
+//    public static void listarArchivos(File directorio) {
+//        if (directorio.isFile()) {
+//            System.out.println("Archivos en el directorio " + directorio.getAbsolutePath() + " ");
+//            File[] archivos = directorio.listFiles();
+//            if (archivos != null) {
+//                for (File archivo : archivos) {
+//                    if (archivo.isDirectory()) {
+//                        listarArchivos(archivo); // Llamada recursiva si es un directorio
+//                    } else {
+//                        System.out.println(archivo.getName());
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
