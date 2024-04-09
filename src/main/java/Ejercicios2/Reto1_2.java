@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Reto1_2 {
     public static void main(String[] args) {
         leer();
-        escribir();
+//        escribir();
 
     }
 
@@ -34,21 +34,22 @@ public class Reto1_2 {
             throw new RuntimeException(e);
         }
     }
-
-    public static void escribir(ArrayList) {
-
-
-        FileWriter escribiendo = null;
-        try {
-            escribiendo = new FileWriter("C:\\dir2\\textoInvertido.txt");
-            for (int i = texto.size() - 1; i >= 0; i--) {
-                escribiendo.write(texto.size());
-            }
-            escribiendo.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }
+
+//    public static void escribir(ArrayList) {
+//
+//
+//        FileWriter escribiendo = null;
+//        try {
+//            escribiendo = new FileWriter("C:\\dir2\\textoInvertido.txt");
+//            for (int i = texto.size() - 1; i >= 0; i--) {
+//                escribiendo.write(texto.size());
+//            }
+//            escribiendo.close();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
+//}
 
 
