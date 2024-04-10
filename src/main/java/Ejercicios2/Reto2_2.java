@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Reto2_2 {
 	public static void main(String[] args) {
-		System.out.println(leer("C:\\dir1\\dir2\\dir3\\dir4"));
+		System.out.println(leer("C:\\dir1\\dir2\\dir3\\dir4\\pruebas.txt"));
 
 	}
 
