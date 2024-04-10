@@ -3,10 +3,10 @@ package Binario;
 import java.io.*;
 import java.util.Scanner;
 
-public class BinarioIO { //input output
+public class BinarioIO2 { //input output
     public static void main(String[] args) {
-        int numeroMateria;
-        double nota;
+        String numeroMateria;
+        String nota;
 
         Scanner leer = new Scanner(System.in);
 
@@ -14,16 +14,16 @@ public class BinarioIO { //input output
             FileOutputStream fos = new FileOutputStream("C:/dir2/String.dat", true);
             DataOutputStream dos = new DataOutputStream(fos);
 
-            System.out.println("Ingresa un codigo de asignatura (0 para acabar)");
-            numeroMateria = leer.nextInt();
-            while (numeroMateria != 0) {
+            System.out.println("Ingresa un STRING");
+            numeroMateria = leer.nextLine();
+            while (!numeroMateria.equals("0")) {
 
-                dos.writeInt(numeroMateria);
-                System.out.println("Ingrese una nota");
-                nota = leer.nextDouble();
-                dos.writeDouble(nota);
-                System.out.println("Ingresa un codigo de asignatura (0 para acabar");
-                numeroMateria = leer.nextInt();
+                dos.writeUTF(numeroMateria);
+                System.out.println("Ingrese otro String");
+                nota = leer.nextLine();
+                dos.writeUTF(nota);
+                System.out.println("Ingresa un STRING (0 para acabar");
+                numeroMateria = leer.nextLine();
 
             }
             dos.close();
@@ -33,8 +33,8 @@ public class BinarioIO { //input output
             DataInputStream dis = new DataInputStream(fis);
 
             while (dis.available() > 0) {
-                numeroMateria = dis.readInt();
-                nota = dis.readDouble();
+                numeroMateria = dis.readUTF();
+                nota = dis.readUTF();
                 System.out.println(numeroMateria + "\t" + nota);
             }
             dis.close();
