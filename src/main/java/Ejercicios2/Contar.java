@@ -58,7 +58,6 @@ public class Contar {
 				isPalabra = false;
 			}
 		}
-
 		return palabras;
 	}
 

@@ -10,13 +10,14 @@ import java.util.Scanner;
 
 public class Reto2_2 {
 	public static void main(String[] args) {
-		System.out.println(leer("C:\\dir1\\dir2\\dir3\\dir4\\pruebas.txt"));
+		System.out.println(leer());
+
 
 	}
 
-	public static String leer(String direccion) {
+	public static String leer() {
 		Scanner leer = new Scanner(System.in);
-		StringBuilder SB = new StringBuilder("");
+		StringBuilder SB = new StringBuilder();
 		FileReader entrada = null;
 		String nuevo = "";
 
@@ -24,7 +25,7 @@ public class Reto2_2 {
 		System.out.println("Ingresa un número");
 		int numero = leer.nextInt();
 		try {
-			entrada = new FileReader(direccion);
+			entrada = new FileReader("C:/dir2/Buffered.txt");
 			try {
 				int c;
 				do {
@@ -45,14 +46,13 @@ public class Reto2_2 {
 			throw new RuntimeException(e);
 		} finally {
 			try {
-				entrada.close();
+                entrada.close();
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
 		}
-		String texto = SB.toString();
-		return texto;
-
+		String salida = SB.toString();
+		return salida;
 	}
 }
 
