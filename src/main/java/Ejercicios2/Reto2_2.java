@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class Reto2_2 {
 	public static void main(String[] args) {
 		System.out.println(leer());
+
 // para eliminar el contenido de un string builder el nombre.delete(0,nombre.lent() o directamente nombre.setLent(0)
 
 	}

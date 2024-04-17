@@ -46,9 +46,9 @@ public class Contar {
 	private static int contar(String lineas) {
 		int palabras = 0;
 		boolean isPalabra = false;
-		int length = lineas.length();
+		int longitud = lineas.length();
 
-		for (int i = 0; i < length; i++) {
+		for (int i = 0; i < longitud; i++) {
 			if (Character.isLetterOrDigit(lineas.charAt(i))) {
 				if (!isPalabra) {
 					isPalabra = true;
