@@ -1,4 +1,4 @@
-package serializacion;
+package Serializacion;
 
 class Administrador extends Empleado{
     private double incentivo;

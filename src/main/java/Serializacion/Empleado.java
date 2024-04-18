@@ -1,4 +1,4 @@
-package serializacion;
+package Serializacion;
 
 
 import java.io.Serializable;
