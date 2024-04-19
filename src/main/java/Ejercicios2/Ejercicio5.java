@@ -16,7 +16,7 @@ public class Ejercicio5 {
     }
 
     public static void leer(String ruta, String palabraBuscada) {
-        StringBuilder retorno = new StringBuilder();
+        StringBuilder SB = new StringBuilder();
         FileReader entrada = null;
         ArrayList<String> palabras = new ArrayList<>();
 
@@ -37,7 +37,7 @@ public class Ejercicio5 {
                             palabra.setLength(0);
                         }
                     }
-                    retorno.append(j);
+                    SB.append(j);
                 }
 
                 // Agregar la última palabra si es que hay una al final del archivo
