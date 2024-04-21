@@ -18,7 +18,6 @@ public class Reemplazar {
 
 
     public static String leer(String direccion) {
-        Scanner leer = new Scanner(System.in);
         StringBuilder SB = new StringBuilder();
         FileReader entrada = null;
         String nuevo = "";
