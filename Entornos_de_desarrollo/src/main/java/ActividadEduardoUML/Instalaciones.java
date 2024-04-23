@@ -8,36 +8,36 @@ package ActividadEduardoUML;
 // Se pueden alquilar, junto a la reserva de la instalación, artículos como balones, raquetas... La reserva tendrá asociado ninguno o varios artículos alquilados.
 
 public class Instalaciones {
-	private String nombre;
-	private double precioxHora;
+    private String nombre;
+    private double precioxHora;
 
-	public String getNombre() {
-		return nombre;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public double getPrecioxHora() {
-		return precioxHora;
-	}
+    public double getPrecioxHora() {
+        return precioxHora;
+    }
 
-	public void setPrecioxHora(double precioxHora) {
-		this.precioxHora = precioxHora;
-	}
+    public void setPrecioxHora(double precioxHora) {
+        this.precioxHora = precioxHora;
+    }
 
-	public Instalaciones(String nombre, double precioxHora) {
-		this.nombre = nombre;
-		this.precioxHora = precioxHora;
-	}
+    public Instalaciones(String nombre, double precioxHora) {
+        this.nombre = nombre;
+        this.precioxHora = precioxHora;
+    }
 
-	@Override
-	public String toString() {
-		final StringBuilder SB = new StringBuilder("Instalaciones{");
-		SB.append("nombre=").append(nombre).append('\'');
-		SB.append(", precioxHora=").append(precioxHora);
-		SB.append('}');
-		return SB.toString();
-	}
+    @Override
+    public String toString() {
+        final StringBuilder SB = new StringBuilder("Instalaciones{");
+        SB.append("nombre=").append(nombre).append('\'');
+        SB.append(", precioxHora=").append(precioxHora);
+        SB.append('}');
+        return SB.toString();
+    }
 }
