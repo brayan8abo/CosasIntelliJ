@@ -6,8 +6,6 @@ public class Ejemplo1BD {
     public static void main(String[] args) {
 
         /*Java™ Database Connectivity*/
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
 
             try {
                 Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3307/sakila", "root", "admin");// siempre se le deben pasar todo esto siempre y cuando sea en local
@@ -23,9 +21,6 @@ public class Ejemplo1BD {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
 
 
     }
