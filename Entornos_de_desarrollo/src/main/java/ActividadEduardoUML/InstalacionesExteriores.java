@@ -40,4 +40,5 @@ public class InstalacionesExteriores extends Instalaciones{
 		SB.append('}');
 		return SB.toString();
 	}
+	/*me mato
 }
