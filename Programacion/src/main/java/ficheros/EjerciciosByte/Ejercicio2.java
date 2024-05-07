@@ -22,7 +22,7 @@ public class Ejercicio2 {
 		Scanner sc = new Scanner(System.in);
 		FileOutputStream fos = null;
 		try {
-			fos = new FileOutputStream("C:\\dir1\\personas.data");
+			fos = new FileOutputStream("C:\\dir2\\personas.data");
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		}
@@ -90,7 +90,7 @@ public class Ejercicio2 {
 		FileInputStream fis = null;
 
 		try {
-			fis = new FileInputStream("C:\\dir1\\personas.data");
+			fis = new FileInputStream("C:\\dir2\\personas.data");
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		}

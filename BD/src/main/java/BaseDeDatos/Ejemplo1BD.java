@@ -4,24 +4,39 @@ import java.sql.*;
 
 public class Ejemplo1BD {
     public static void main(String[] args) {
+        final String instSQLSelect = "select * from productos";
+        final String instSQLInsert = "INSERT into productos values (4,'pistola',500.99,true)";
+        final String instSQLDelete = "delete from productos where codigo=4";
+        final String instSQLUpdate = "update productos set precio = precio * 2 where codigo=2";
+        try {
+            //Class.forName("com.mysql.jbdc.driver");
+            //Connection miConexion = DriverManager.getConnection("jbdc:mysql://localhost:3307/sakila","root","admin");
+            Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/pruebas", "root", "admin");
+            Statement st = miConexion.createStatement();
+            //st.executeUpdate(instSQLInsert);
+            //st.executeUpdate(instSQLDelete);
+            st.execute(instSQLUpdate);
+            ResultSet rs = st.executeQuery(instSQLSelect);
 
-        /*Java™ Database Connectivity*/
+            while (rs.next()) {
 
-            try {
-                Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3307/sakila", "root", "admin");// siempre se le deben pasar todo esto siempre y cuando sea en local
-                Statement st = miConexion.createStatement();
 
-                ResultSet rs = st.executeQuery("select * from actor");
+                System.out.println(rs.getInt("codigo") +
+                        "\t" + rs.getString("nombre")
+                        + "\t" + rs.getDouble("precio")
+                        + "\t" + rs.getBoolean("importado"));
 
-                while (rs.next()) {
-//                    System.out.println(rs.getArray("codigo") + "\t" + rs.getString("Nombre") + "\t" + rs.getDouble("Precio") + "\t" + rs.getBoolean("Importado")); //con el get tengo la opcion de columna o label entonces le paso el nombre de la fila
-                    System.out.println(rs.getInt("actor_id") + "\t");
-                }
+                //System.out.println(rs.getInt("id_cuenta")+"\t"+rs.getDouble("saldo"));
 
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
+
             }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
 
     }
+
 }
+
