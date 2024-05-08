@@ -28,7 +28,7 @@ public class Ejemplo1BD {
 
                 //System.out.println(rs.getInt("id_cuenta")+"\t"+rs.getDouble("saldo"));
 
-
+    miConexion.close();
             }
 
         } catch (SQLException e) {

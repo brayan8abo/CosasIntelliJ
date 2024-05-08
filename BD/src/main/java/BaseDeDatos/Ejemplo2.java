@@ -1,3 +1,5 @@
+package BaseDeDatos;
+
 import java.sql.*;
 
 public class Ejemplo2 {
