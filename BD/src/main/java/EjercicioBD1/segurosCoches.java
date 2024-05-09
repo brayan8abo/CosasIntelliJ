@@ -17,20 +17,18 @@ public class segurosCoches {
 			Statement st = miConexion.createStatement();
 
 
-
 //			st.execute(instSQLcreate);
 //			st.execute(instSQLInsert);
 
 
-
 			ResultSet rs = st.executeQuery(instSQLSelect);
 
-			while (rs.next()){
+			while (rs.next()) {
 				String dni_propietario = rs.getString("dni");
 				int edad = rs.getInt("edad");
 				String matricula = rs.getString("matricula");
 				int precio = rs.getInt("precio");
-				double seguro = calcularSeguro(edad,precio);
+				double seguro = calcularSeguro(edad, precio);
 				final String insertSQLInsertTable = " insert into segurocoche (dni,edad,matricula,seguro) values ('" + dni_propietario + "'," + edad + ",'" + matricula + "'," + seguro + ");";
 
 //				st.execute(insertSQLInsertTable);
@@ -38,7 +36,7 @@ public class segurosCoches {
 
 			st.execute(instSQLSelect2);
 			double porcentaje;
-			while (rs.next()){
+			while (rs.next()) {
 				int id = rs.getInt("id");
 				String dni_propietario = rs.getString("dni");
 				int edad = rs.getInt("Edad");
@@ -53,7 +51,7 @@ public class segurosCoches {
 					st.execute(instSQLUpdateSC);
 
 				}
-				if (seguro > 400){
+				if (seguro > 400) {
 
 					String instSQLDelete = "delete from segurocoche where matricula=" + matricula + "'";
 
@@ -62,10 +60,7 @@ public class segurosCoches {
 			}
 
 
-
-
-
-rs.close();
+			rs.close();
 			st.close();
 
 
@@ -73,6 +68,7 @@ rs.close();
 			throw new RuntimeException(e);
 		}
 	}
+
 	private static double calcularSeguro(int edad, double precioCoche) {
 		if (edad < 40) {
 			return precioCoche * 0.02;
