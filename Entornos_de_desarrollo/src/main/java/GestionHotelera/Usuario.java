@@ -16,7 +16,7 @@ public abstract class Usuario {
 		this.contraseña = contraseña;
 	}
 
-	public String getContraseña() {
+	public String getContrasenia() {
 		return contraseña;
 	}
 
