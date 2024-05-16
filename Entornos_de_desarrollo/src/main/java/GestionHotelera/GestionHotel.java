@@ -14,15 +14,12 @@ public class GestionHotel {
 		}
 
 		public static int menu (){
-			Scanner sc = new Scanner(System.in);
+			Scanner leer = new Scanner(System.in);
 			int menu;
 
-			System.out.println("--------------GESTOR DE HOTELES-------------");
-			System.out.println("-1-INICIAR SESION---------------------------");
-			System.out.println("-2-REGISTRARSE EN EL GESTOR DE HOTELES------");
-			System.out.println("-0-SALIR------------------------------------");
-			System.out.println("-INTRODUCE UNA OPCION-----------------------");
-			menu= sc.nextInt();
+			System.out.println("GESTOR DE HOTELES\n1-INICIAR SESIÓN\n2-REGISTRARSE EN EL GESTOR DE HOTELES\n0-SALIR");
+			System.out.println("-INTRODUCE UNA OPCION");
+			menu= leer.nextInt();
 			return menu;
 
 		}
@@ -36,8 +33,8 @@ public class GestionHotel {
 
 				switch (opcion) {
 					case 1:
-						System.out.println("--INICIAR SESION---------------------------");
-						System.out.println("Introduce tu correo electronico");
+						System.out.println("--INICIAR SESIÓN");
+						System.out.println("Ingresa tu usuario");
 						String correoE = leer.nextLine();
 						System.out.println("Introduce tu contraseña");
 						String inicioSesion = leer.nextLine();
@@ -103,7 +100,7 @@ public class GestionHotel {
 							int codigo=leer.nextInt();
 							if (codigo==codigoAdmin){
 
-								System.out.println("Codigo correcto ");
+								System.out.println("Código correcto");
 								System.out.println("Introduce tu nombre");
 								leer.nextLine();
 								String nombre = leer.nextLine();
@@ -130,7 +127,7 @@ public class GestionHotel {
 								System.out.println("ADMINISTRADOR CREADO CORRECTAMENTE");
 							}
 							else{
-								System.out.println("Codigo incorrecto contacta con la empresa");
+								System.out.println("Código incorrecto contacta con la empresa");
 							}
 						}
 						if (adminOCliente==2){
