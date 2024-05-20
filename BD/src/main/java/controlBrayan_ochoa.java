@@ -5,37 +5,37 @@ public class controlBrayan_ochoa {
 
 
         //SENTENCIAS PARA DECLARAR BASE DE DATOS, CONTRASEÑA Y USUARIO
-        final String url = "jdbc:mysql://localhost:3306/tienda_programacion";
+        final String url = "jdbc:mysql://localhost:3306/";
         final String usuario = "root";
         final String password = "admin";
 
         //Instrucciones para la creacion de la base de datos
 
-        //final String instSQLcreate = "create database Tienda_programacion";
+        final String instSQLcreate = "create database Tienda_programacion";
 
 
         // SE HACE EL USO DE LA BD
-        //final String useBD = "use Tienda_programacion;";
+        final String useBD = "use Tienda_programacion;";
 
         //Instrucciones para la creacion de una tabla
 
-//        final String instSQLCreateFAB = "create table Fabricantes(CLFAB int Primary Key,Nombre varchar(30));";
-        /*final String instSQLCreateART = "create table Articulos(\n" +
+        final String instSQLCreateFAB = "create table Fabricantes(CLFAB int Primary Key,Nombre varchar(30));";
+        final String instSQLCreateART = "create table Articulos(\n" +
                 "CLART int Primary Key,\n" +
                 "Nombre varchar(30),\n" +
                 "Precio int,\n" +
                 "CLFAB int,\n" +
                 "Foreign Key (CLFAB) References Fabricantes(CLFAB)\n" +
                 "ON DELETE CASCADE ON UPDATE CASCADE\n" +
-                ")ENGINE=InnoDB;";*/
+                ")ENGINE=InnoDB;";
 
-//        final String instSQLInsert = "insert into Fabricantes values(1,'Kingston'),(2,'Adata'),(3,'Logitech'),(4,'Lexar'),(5,'Seagate');";
+        final String instSQLInsert = "insert into Fabricantes values(1,'Kingston'),(2,'Adata'),(3,'Logitech'),(4,'Lexar'),(5,'Seagate');";
 
         // se introducen todos los articulos uno por uno, debibo a un error, pero se encuentran todos los articulos
-//        final String instSQLInsertART = "insert into Articulos values(10,'Tarjeta de Red',180,3);";
+        final String instSQLInsertART = "insert into Articulos values(10,'Tarjeta de Red',180,3);";
 
 //        creacion de la tabla ARTFAB
-//        final String createTable = "create table ArtFab (nombre_articulo varchar (50), fabricante varchar (50), precio int, IVA double);";
+        final String createTable = "create table ArtFab (nombre_articulo varchar (50), fabricante varchar (50), precio int, IVA double);";
 
         String recogerDatos = "select articulos.nombre,articulos.precio from articulos join fabricantes on articulos.CLFAB = fabricantes.CLFAB;";
 
@@ -45,13 +45,13 @@ public class controlBrayan_ochoa {
             Statement st = miConexion.createStatement();
 
 
-//            st.execute(instSQLcreate);
-//            st.execute(useBD);
-//            st.execute(instSQLCreateFAB);
-//            st.execute(instSQLCreateART);
-//            st.execute(instSQLInsert);
-//            st.execute(instSQLInsertART);
-//            st.execute(createTable);
+            st.execute(instSQLcreate);
+            st.execute(useBD);
+            st.execute(instSQLCreateFAB);
+            st.execute(instSQLCreateART);
+            st.execute(instSQLInsert);
+            st.execute(instSQLInsertART);
+            st.execute(createTable);
 
 
             ResultSet rs = st.executeQuery(recogerDatos);
