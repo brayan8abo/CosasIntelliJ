@@ -13,6 +13,7 @@ public class CPrincipal {
 
 
         ArrayList<CContenido> contenidos = new ArrayList<CContenido>();
+
         contenidos.add(pelicula1);
         contenidos.add(serie1);
 
