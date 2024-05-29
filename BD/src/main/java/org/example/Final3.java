@@ -153,7 +153,7 @@ public class Final3 {
             st.execute("delete from ciudades where nombre = '" + borrar + "'");
             System.out.println("\nLa ciudad " + borrar + " se borro exitosamente\n");
         } else {
-            System.out.println("La ciudad no se encuentra en la base de datos");
+            System.out.println("Hasta pronto");
         }
 
     }

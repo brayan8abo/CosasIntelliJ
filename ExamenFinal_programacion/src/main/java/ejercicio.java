@@ -1,4 +1,4 @@
-package baseDeDatos.examenBD;
+
 
 import java.sql.*;
 import java.util.Scanner;
