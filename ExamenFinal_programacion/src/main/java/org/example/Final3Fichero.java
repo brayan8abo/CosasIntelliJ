@@ -73,6 +73,7 @@ public class Final3Fichero {
 		dos.writeInt(riqueza);
 
 
+
 		nombre = "Aranjuez";
 		dos.writeUTF(nombre);
 		poblacion = 58213;
