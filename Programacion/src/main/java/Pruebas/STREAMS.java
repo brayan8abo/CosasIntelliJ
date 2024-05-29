@@ -16,6 +16,7 @@ public class STREAMS {
 	public static void leer(String ruta) throws IOException {
 		try {
 			FileReader fr = new FileReader(ruta);
+
 			int c;
 			while ((c = fr.read()) != -1) {
 				System.out.print((char) c);
@@ -35,10 +36,10 @@ public class STREAMS {
 			FileOutputStream fos = new FileOutputStream(ruta); // escoger el fichero
 			DataOutputStream dos = new DataOutputStream(fos); // escribir en el fichero
 
-			dos.writeInt(4451444);
 
 
-			fos.close();
+
+
 
 		} catch (IOException e) {
 			throw new RuntimeException(e);
