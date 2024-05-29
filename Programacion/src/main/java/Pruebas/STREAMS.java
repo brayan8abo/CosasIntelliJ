@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class STREAMS {
 	public static void main(String[] args) throws IOException {
 
-		leer("C://dir1/Definicion.txt");
+		leer("C://dir1/leer.txt");
 		escribirBinario();
 
 
@@ -16,7 +16,6 @@ public class STREAMS {
 	public static void leer(String ruta) throws IOException {
 		try {
 			FileReader fr = new FileReader(ruta);
-
 			int c;
 			while ((c = fr.read()) != -1) {
 				System.out.print((char) c);
@@ -28,7 +27,7 @@ public class STREAMS {
 	}
 
 	public static void escribirBinario() {
-		String ruta = "C://dir1/Definicion.txt";
+		String ruta = "C://dir1/leer.txt";
 
 
 		try {
@@ -36,12 +35,10 @@ public class STREAMS {
 			FileOutputStream fos = new FileOutputStream(ruta); // escoger el fichero
 			DataOutputStream dos = new DataOutputStream(fos); // escribir en el fichero
 
+			dos.writeInt(4451444);
 
- 			String nombre = "Noel";
-			 dos.writeUTF(nombre);
-			 int numeros = 4444;
-			 dos.writeInt(numeros);
 
+			fos.close();
 
 		} catch (IOException e) {
 			throw new RuntimeException(e);
