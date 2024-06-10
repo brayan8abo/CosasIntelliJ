@@ -1,6 +1,8 @@
 package OrdinariaProgramacion;
 
-public class Propiedad {
+import java.io.Serializable;
+
+public class Propiedad implements Serializable {
 
     private String ubicacion;
     private int metros;
